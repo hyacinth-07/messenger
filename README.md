@@ -27,5 +27,7 @@ dedicated pages
 ### server
 
 - express
-- mongodb ???
+- mongodb + atlas
 - dummy json => https://dummyjson.com/
+
+remember that react talks to express, who then distributes between mongo and the dummy json
