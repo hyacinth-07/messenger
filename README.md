@@ -50,4 +50,4 @@ REMEMBER TO DO VALIDATION
 ### user
 
 - name
-- password
+- password (encrypt)
