@@ -34,6 +34,8 @@ remember that react talks to express, who then distributes between mongo and the
 
 ## schemas
 
+REMEMBER TO DO VALIDATION
+
 ### thread
 
 - title

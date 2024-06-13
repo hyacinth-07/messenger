@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+// controller modules
+
+const thread_controller = require('../controllers/threadController');
+
 // GET ALL THREADS
 
 router.get('/app', (req, res) => {
@@ -15,9 +19,7 @@ router.delete('/app/:id/delete', (req, res) => {
 
 // POST NEW THREAD
 
-router.post('/app', (req, res) => {
-	res.send('create new thread');
-});
+router.post('/app', thread_controller.create);
 
 // GET ALL MESSAGES FROM SINGLE THREAD
 
