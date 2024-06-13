@@ -31,3 +31,21 @@ dedicated pages
 - dummy json => https://dummyjson.com/
 
 remember that react talks to express, who then distributes between mongo and the dummy json
+
+## schemas
+
+### thread
+
+- title
+- time
+- comments
+
+### comment
+
+- body
+- time
+
+### user
+
+- name
+- password

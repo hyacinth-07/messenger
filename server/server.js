@@ -6,9 +6,7 @@ const mongoDB = process.env.MONGO_URI;
 const app = express();
 const port = process.env.PORT;
 
-app.get('/', (req, res) => {
-	res.send('Hello, this is the server');
-});
+const routes = require('./routes/messageApp');
 
 // connect to db
 
@@ -22,6 +20,17 @@ async function connect() {
 		console.log(`Could not connect: ${err}`);
 	}
 }
+
+// middleware
+
+app.use(express.json());
+app.use(express.urlencoded());
+
+// routes
+
+app.use(routes);
+
+// listen
 
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
