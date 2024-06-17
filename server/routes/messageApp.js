@@ -6,29 +6,20 @@ const router = express.Router();
 const thread_controller = require('../controllers/threadController');
 
 // GET ALL THREADS
-
-router.get('/app', (req, res) => {
-	res.send('get all threads');
-});
-
-// DELETE THREAD
-
-router.delete('/app/:id/delete', (req, res) => {
-	res.send(`delete selected thread`);
-});
+router.get('/app', thread_controller.getAll);
 
 // POST NEW THREAD
-
 router.post('/app', thread_controller.create);
 
-// GET ALL MESSAGES FROM SINGLE THREAD
+// DELETE THREAD
+router.delete('/app', thread_controller.delete);
 
+// GET ALL MESSAGES FROM SINGLE THREAD
 router.get('/app/:id', (req, res) => {
 	res.send('get all comments from selected thread');
 });
 
 // POST NEW MESSAGE
-
 router.post('/app/:id', (req, res) => {
 	res.send('post new comment in thread');
 });
