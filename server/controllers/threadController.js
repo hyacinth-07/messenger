@@ -31,8 +31,25 @@ exports.getAll = async (req, res) => {
 exports.delete = async (req, res) => {
 	// misses validation and sanitization
 
+	const { id } = req.params;
+
 	try {
-		await Thread.findByIdAndDelete(req.body.id);
+		await Thread.findByIdAndDelete(id);
+	} catch (err) {
+		res.status(400).json({ error: err.message });
+	}
+};
+
+// get single thread
+
+exports.getOne = async (req, res) => {
+	// miss validation and sanitization
+
+	const { id } = req.params;
+
+	try {
+		const thread = await Thread.findById(id).exec();
+		res.status(200).json(thread);
 	} catch (err) {
 		res.status(400).json({ error: err.message });
 	}
