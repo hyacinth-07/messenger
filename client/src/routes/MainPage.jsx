@@ -5,7 +5,7 @@ import Channels from '../components/Channels';
 import Messages from '../components/Messages';
 
 export default function MainPage() {
-	const { threads } = useLoaderData;
+	const { threads } = useLoaderData();
 
 	return (
 		<>

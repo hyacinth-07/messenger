@@ -1,10 +1,9 @@
 export async function threadsLoader() {
-	// cors error to be solved
-
 	let threads;
 
 	try {
-		threads = fetch('http://127.0.0.1:5173/app/');
+		const data = await fetch('http://localhost:3000/app/');
+		threads = await data.json();
 	} catch (error) {
 		console.log(error);
 	}

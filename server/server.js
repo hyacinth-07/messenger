@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const mongoose = require('mongoose');
 const mongoDB = process.env.MONGO_URI;
 
@@ -7,6 +8,8 @@ const app = express();
 const port = process.env.PORT;
 
 const routes = require('./routes/messageApp');
+
+app.use(cors({ origin: 'http://127.0.0.1:5173' }));
 
 // connect to db
 
