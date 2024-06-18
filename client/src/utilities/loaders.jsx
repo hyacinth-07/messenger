@@ -4,7 +4,7 @@ export async function threadsLoader() {
 	let threads;
 
 	try {
-		threads = fetch('http://127.0.0.1:3000/app/');
+		threads = fetch('http://127.0.0.1:5173/app/');
 	} catch (error) {
 		console.log(error);
 	}
