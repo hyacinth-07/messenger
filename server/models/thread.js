@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { DateTime } = require('luxon');
 const { Schema } = mongoose;
 
 const ThreadSchema = Schema(
@@ -12,5 +13,9 @@ const ThreadSchema = Schema(
 ThreadSchema.virtual('url').get(function () {
 	return `/app/${this._id}`;
 });
+
+// ThreadSchema.virtual('time').get(function () {
+// 	return DateTime.fromISO(this.createdAt).toLocaleString(DateTime.DATE_MED);
+// });
 
 module.exports = mongoose.model('Thread', ThreadSchema);
