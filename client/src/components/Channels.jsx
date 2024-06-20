@@ -8,7 +8,7 @@ function formatDate(date) {
 	return newDate;
 }
 
-function Card({ index, title, createdAt }) {
+function Card({ title, createdAt }) {
 	const date = formatDate(createdAt);
 
 	return (
@@ -23,8 +23,6 @@ function Card({ index, title, createdAt }) {
 }
 
 export default function Channels({ threads }) {
-	// console.log(new Intl.DateTimeFormat('en-US').format(threads.createdAt));
-
 	return (
 		<>
 			<div className="w-full h-full flex flex-col justify-start items-start gap-1">

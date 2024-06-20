@@ -14,8 +14,4 @@ ThreadSchema.virtual('url').get(function () {
 	return `/app/${this._id}`;
 });
 
-// ThreadSchema.virtual('time').get(function () {
-// 	return DateTime.fromISO(this.createdAt).toLocaleString(DateTime.DATE_MED);
-// });
-
 module.exports = mongoose.model('Thread', ThreadSchema);
