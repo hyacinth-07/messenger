@@ -31,7 +31,7 @@ exports.getAll = async (req, res) => {
 exports.delete = async (req, res) => {
 	// misses validation and sanitization
 
-	const { id } = req.params;
+	const { id } = req.body;
 
 	try {
 		await Thread.findByIdAndDelete(id);

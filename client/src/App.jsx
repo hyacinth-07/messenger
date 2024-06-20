@@ -1,7 +1,7 @@
 // UTILITIES
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { threadsLoader } from './utilities/loaders';
-import { postNewThread } from './utilities/actions';
+import { threadActions } from './utilities/actions';
 // ROUTES
 import Root from './routes/Root';
 import ErrorPage from './routes/ErrorPage';
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
 				path: '/app',
 				element: <MainPage />,
 				loader: threadsLoader,
-				action: postNewThread,
+				action: threadActions,
 			},
 			{ path: '/app/settings', element: <SettingsPage /> },
 		],

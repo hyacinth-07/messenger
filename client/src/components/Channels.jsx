@@ -1,3 +1,5 @@
+import { Form } from 'react-router-dom';
+
 function formatDate(date) {
 	let newDate = new Date(date);
 	newDate = new Intl.DateTimeFormat('en-US', {
@@ -8,7 +10,20 @@ function formatDate(date) {
 	return newDate;
 }
 
-function Card({ title, createdAt }) {
+function DeleteForm({ id }) {
+	return (
+		<>
+			<Form method="delete">
+				<button type="submit" name="intent" value="delete">
+					Delete Thread
+				</button>
+				<input type="hidden" name="id" defaultValue={id}></input>
+			</Form>
+		</>
+	);
+}
+
+function Card({ title, createdAt, id }) {
 	const date = formatDate(createdAt);
 
 	return (
@@ -16,7 +31,7 @@ function Card({ title, createdAt }) {
 			<article className="border-2 border-black border-solid w-full">
 				<p>{title}</p>
 				<p>{date}</p>
-				<button>X</button>
+				<DeleteForm id={id} />
 			</article>
 		</>
 	);
@@ -31,6 +46,7 @@ export default function Channels({ threads }) {
 						key={index}
 						title={element.title}
 						createdAt={element.createdAt}
+						id={element._id}
 					/>
 				))}
 			</div>
