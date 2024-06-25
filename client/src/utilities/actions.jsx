@@ -3,6 +3,7 @@ export async function threadActions({ request }) {
 	let intent = formData.get('intent');
 
 	let deleteId = formData.get('id');
+	let addTitle = formData.get('title');
 
 	if (intent === 'add') {
 		try {
@@ -12,7 +13,7 @@ export async function threadActions({ request }) {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ title: 'Anime Thread', comments: [] }),
+				body: JSON.stringify({ title: addTitle, comments: [] }),
 			});
 			return data;
 		} catch (error) {

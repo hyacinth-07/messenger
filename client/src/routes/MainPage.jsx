@@ -5,7 +5,7 @@ import Settings from '../components/Settings';
 import Channels from '../components/Channels';
 import Messages from '../components/Messages';
 import AddNewThread from '../components/AddNewThread';
-import { OpenModal } from '../components/OpenModal';
+import OpenModal from '../components/OpenModal';
 
 export default function MainPage() {
 	const { threads } = useLoaderData();
