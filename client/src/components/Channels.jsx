@@ -1,4 +1,4 @@
-import { Form } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 
 function formatDate(date) {
 	let newDate = new Date(date);
@@ -32,6 +32,7 @@ function Card({ title, createdAt, id }) {
 				<p>{title}</p>
 				<p>{date}</p>
 				<DeleteForm id={id} />
+				<Link to={`${id}`}>to messages</Link>
 			</article>
 		</>
 	);

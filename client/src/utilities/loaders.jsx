@@ -10,3 +10,16 @@ export async function threadsLoader() {
 
 	return { threads };
 }
+
+export async function messagesLoader() {
+	let messages;
+
+	try {
+		const data = await fetch('https://dummyjson.com/comments');
+		messages = await data.json();
+	} catch (error) {
+		console.log(error);
+	}
+
+	return { messages };
+}
