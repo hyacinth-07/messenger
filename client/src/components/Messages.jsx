@@ -12,8 +12,9 @@ function MessageBubble({ body, user, likes }) {
 	);
 }
 
-export default function Messages() {
-	const { messages } = useLoaderData();
+export default function Messages({ messages }) {
+	// need to pass props from threads to the outlet
+	// or load comments from database
 
 	return (
 		<>
