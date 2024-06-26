@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 				action: threadActions,
 				children: [
 					{
-						path: 'app/:threadId',
+						path: '/app/:id',
 						element: <Messages />,
 						loader: messagesLoader,
 					},
