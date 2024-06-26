@@ -1,3 +1,5 @@
+import createMessages from './createMessages';
+
 export async function threadActions({ request }) {
 	let formData = await request.formData();
 	let intent = formData.get('intent');
@@ -7,13 +9,17 @@ export async function threadActions({ request }) {
 
 	if (intent === 'add') {
 		try {
+			const messages = await createMessages();
 			const data = await fetch('http://localhost:3000/app/', {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ title: addTitle, comments: [] }),
+				body: JSON.stringify({
+					title: addTitle,
+					comments: [messages],
+				}),
 			});
 			return data;
 		} catch (error) {
