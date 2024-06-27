@@ -1,3 +1,5 @@
+import { useLoaderData } from 'react-router-dom';
+
 function MessageBubble({ body, user, likes }) {
 	return (
 		<>
@@ -11,13 +13,12 @@ function MessageBubble({ body, user, likes }) {
 }
 
 export default function Messages() {
-	// either pass props from channels
-	// or load them up from database
+	const { messages } = useLoaderData();
 
 	return (
 		<>
 			<div className="w-full h-full flex flex-col gap-2 justify-center items-center">
-				{messages.comments.map((element, index) => (
+				{messages[0].map((element, index) => (
 					<MessageBubble
 						key={index}
 						body={element.body}

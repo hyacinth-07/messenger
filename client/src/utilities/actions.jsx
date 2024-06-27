@@ -18,7 +18,7 @@ export async function threadActions({ request }) {
 				},
 				body: JSON.stringify({
 					title: addTitle,
-					comments: [messages],
+					comments: [messages.messages.comments],
 				}),
 			});
 			return data;

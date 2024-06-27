@@ -1,6 +1,6 @@
 // UTILITIES
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { threadsLoader } from './utilities/loaders';
+import { threadsLoader, messagesLoader } from './utilities/loaders';
 import { threadActions } from './utilities/actions';
 // ROUTES
 import Root from './routes/Root';
@@ -29,6 +29,7 @@ const router = createBrowserRouter([
 					{
 						path: '/app/:id',
 						element: <Messages />,
+						loader: messagesLoader,
 					},
 				],
 			},

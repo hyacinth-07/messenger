@@ -1,5 +1,3 @@
-import getRandomNumber from './randomNumber';
-
 export async function threadsLoader() {
 	let threads;
 
@@ -13,14 +11,11 @@ export async function threadsLoader() {
 	return { threads };
 }
 
-export async function messagesLoader() {
+export async function messagesLoader({ params }) {
 	let messages;
-	const num = getRandomNumber();
 
 	try {
-		const data = await fetch(
-			`https://dummyjson.com/comments/?limit=7&skip=${num}`
-		);
+		const data = await fetch(`http://localhost:3000/app/${params.id}`);
 		messages = await data.json();
 	} catch (error) {
 		console.log(error);

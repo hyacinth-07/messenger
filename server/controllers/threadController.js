@@ -46,11 +46,11 @@ exports.delete = async (req, res) => {
 exports.getOne = async (req, res) => {
 	// miss validation and sanitization
 
-	const { id } = req.params;
+	const id = req.params.id;
 
 	try {
 		const thread = await Thread.findById(id).exec();
-		res.status(200).json(thread);
+		res.status(200).json(thread.comments);
 	} catch (err) {
 		res.status(400).json({ error: err.message });
 	}

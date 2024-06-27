@@ -17,11 +17,6 @@ router.post('/app', thread_controller.create);
 // DELETE THREAD
 router.delete('/app', thread_controller.delete);
 
-// GET ALL MESSAGES FROM SINGLE THREAD
-router.get('/app/:id', (req, res) => {
-	res.send('get all comments from selected thread');
-});
-
 // POST NEW MESSAGE
 router.post('/app/:id', (req, res) => {
 	res.send('post new comment in thread');
