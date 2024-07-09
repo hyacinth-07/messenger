@@ -3,7 +3,10 @@ import { Form } from 'react-router-dom';
 export default function MessageBox() {
 	return (
 		<>
-			<Form className="w-full basis-auto grow flex items-center justify-around border-2 border-green-600 border-solid">
+			<Form
+				method="post"
+				className="w-full basis-auto grow flex items-center justify-around border-2 border-green-600 border-solid"
+			>
 				<textarea
 					name="newMessage"
 					id="newMessage"
@@ -12,7 +15,9 @@ export default function MessageBox() {
 					cols="20"
 					className="resize-x"
 				></textarea>
-				<button>Send</button>
+				<button type="submit" name="intent" value="send">
+					Send
+				</button>
 			</Form>
 		</>
 	);

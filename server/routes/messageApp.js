@@ -4,6 +4,7 @@ const router = express.Router();
 // controller modules
 
 const thread_controller = require('../controllers/threadController');
+const message_controller = require('../controllers/messageController');
 
 // GET ALL THREADS
 router.get('/app', thread_controller.getAll);
@@ -18,9 +19,7 @@ router.post('/app', thread_controller.create);
 router.delete('/app', thread_controller.delete);
 
 // POST NEW MESSAGE
-router.post('/app/:id', (req, res) => {
-	res.send('post new comment in thread');
-});
+router.post('/app/:id', message_controller.sendMessage);
 
 // settings stuff?
 

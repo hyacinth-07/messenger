@@ -47,3 +47,28 @@ export async function threadActions({ request }) {
 
 	return null;
 }
+
+export async function messageActions({ request, params }) {
+	let formData = await request.formData();
+	let [text, button] = formData;
+	let intent = formData.get('intent');
+
+	if (intent === 'send') {
+		try {
+			const data = await fetch(`http://localhost:3000/app/${params.id}`, {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ body: text[1], likes: 0, user: 'Me' }),
+			});
+			return data;
+		} catch (error) {
+			console.log(error);
+			return null;
+		}
+	}
+
+	return null;
+}
