@@ -2,12 +2,6 @@
 
 # TO DO NEXT
 
-- create new message
-- fetch id from url
-- push new message into the comments array
-- use Form and text input for a textbox
-- extra: add an automated response (fetch one comment)
-
 ---
 
 # GENERAL

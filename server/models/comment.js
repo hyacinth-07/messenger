@@ -3,8 +3,15 @@ const { Schema } = mongoose;
 
 const CommentSchema = Schema(
 	{
-		text: { type: String, required: true, maxLength: 540 },
-		user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+		id: { type: Number },
+		body: { type: String, required: true },
+		postId: { type: Number },
+		likes: { type: Number },
+		user: {
+			id: { type: Number },
+			username: { type: String, required: true },
+			fullName: { type: String },
+		},
 	},
 	{ timestamps: true }
 );
