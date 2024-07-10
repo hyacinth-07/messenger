@@ -2,6 +2,10 @@
 
 # TO DO NEXT
 
+- nice css
+- user auth
+- sanitize various data
+
 ---
 
 # GENERAL
