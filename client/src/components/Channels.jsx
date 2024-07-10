@@ -41,7 +41,7 @@ function Card({ title, createdAt, id }) {
 export default function Channels({ threads }) {
 	return (
 		<>
-			<div className="w-full h-full flex flex-col justify-start items-start gap-1">
+			<div className="w-full h-full flex flex-col justify-start items-start gap-1 overflow-auto">
 				{threads.map((element, index) => (
 					<Card
 						key={index}
