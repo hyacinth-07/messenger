@@ -5,7 +5,7 @@ export default function MessageBox() {
 		<>
 			<Form
 				method="post"
-				className="w-full h-1/5 flex items-center justify-around border-2 border-green-600 border-solid"
+				className="w-full row-span-1 flex items-center justify-around border-2 border-green-600 border-solid"
 			>
 				<textarea
 					name="newMessage"

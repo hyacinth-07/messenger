@@ -18,8 +18,8 @@ export default function Messages() {
 
 	return (
 		<>
-			<div className="w-full h-full flex flex-col items-center">
-				<div className="w-full h-[690px] overflow-auto">
+			<div className="w-full h-full grid grid-rows-[minmax(0,_4fr)_1fr]">
+				<div className="w-full h-[680px] row-span-1 overflow-y-auto">
 					{messages[0].map((element, index) => (
 						<MessageBubble
 							key={index}

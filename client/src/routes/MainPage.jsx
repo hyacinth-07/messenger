@@ -15,19 +15,17 @@ export default function MainPage() {
 
 	return (
 		<>
-			<div className="flex flex-col w-full h-full p-2">
-				<header className="border-2 border-black border-solid min-h-12">
+			<div className="grid grid-cols-[270px_1fr] grid-rows-[4rem_auto] w-full h-full p-2">
+				<header className="border-2 border-black border-solid col-span-full row-span-1">
 					<Settings />
 				</header>
-				<main className="grid grid-cols-4 gap-2 h-full pt-2">
-					<nav className="border-2 border-red-700 border-solid col-span-1">
-						<OpenModal setModal={setModal} />
-						<Channels threads={threads} />
-					</nav>
-					<section className="border-2 border-sky-700 border-solid col-span-3">
-						<Outlet />
-					</section>
-				</main>
+				<nav className="border-2 border-red-700 border-solid col-span-1 row-span-1 grid grid-rows-[3rem_auto] overflow-auto">
+					<OpenModal setModal={setModal} />
+					<Channels threads={threads} />
+				</nav>
+				<section className="border-2 border-sky-700 border-solid">
+					<Outlet />
+				</section>
 				<AddNewThread setModal={setModal} modal={modal} />
 			</div>
 		</>
