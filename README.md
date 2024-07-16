@@ -2,9 +2,17 @@
 
 # TO DO NEXT
 
-- nice css
-- user auth
 - sanitize various data
+
+- FRONT END FIRST (forms, inputs)
+- then backend
+
+- Validation (client side) checks that entered values are appropriate for each field (are in the right range, format, etc.) and that values have been supplied for all required fields.
+- Sanitization (server side) removes/replaces characters in the data that might potentially be used to send malicious content to the server.
+- express-mongo-sanitize ???
+
+- user auth
+- nice css
 
 ---
 

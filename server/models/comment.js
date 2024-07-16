@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const CommentSchema = Schema(
 	{
 		id: { type: Number },
-		body: { type: String, required: true },
+		body: { type: String, required: true, minLength: 1 },
 		postId: { type: Number },
 		likes: { type: Number },
 		user: {

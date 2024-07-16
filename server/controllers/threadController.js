@@ -14,8 +14,6 @@ exports.getAll = async (req, res) => {
 // create new thread
 
 exports.create = async (req, res) => {
-	// misses validation and sanitization
-
 	const { title, comments } = req.body;
 
 	try {
