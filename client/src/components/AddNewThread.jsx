@@ -25,6 +25,10 @@ export default function AddNewThread({ setModal, modal }) {
 							aria-label="title-thread"
 							name="title"
 							id="title"
+							required
+							minLength="0"
+							maxLength="180"
+							className="resize-x invalid:border-red-500 border-solid border-2"
 						/>
 					</label>
 					<button
